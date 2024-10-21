@@ -1,0 +1,21 @@
+def blind_auction():
+    winner_bid = 0
+    winner_name = ""
+    auction = {}
+    done = False
+    while not done:
+        name = input("Enter Your Name : ")
+        bid = float(input("Enter Your Bid :"))
+        auction[name] = bid
+        print("\n" * 50)
+        i = input("Are there more bidders?\nType Yes or No : ")
+        if i.lower() == "no":
+            done = True
+        else:
+            done = False
+        for i in auction:
+            if auction[i] > winner_bid:
+                winner_bid = auction[i]
+                winner_name = i
+    print(f"The Winner of the auction is {winner_name} with a bid of {winner_bid}")
+blind_auction()
